@@ -1,0 +1,289 @@
+\RequirePackage{filecontents}
+\begin{filecontents*}{moderncvcolorburgundy.sty}
+%% start of file `moderncvcolorburgundy.sty'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+%-------------------------------------------------------------------------------
+%                identification
+%-------------------------------------------------------------------------------
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{moderncvcolorburgundy}[2013/02/09 v1.3.0 modern curriculum vitae and letter color scheme: burgundy]
+
+%-------------------------------------------------------------------------------
+%                color scheme definition
+%-------------------------------------------------------------------------------
+\definecolor{color0}{rgb}{0,0,0}% black
+\definecolor{color1}{rgb}{0.545098,0,0}% burgundy
+\definecolor{color2}{rgb}{0.45,0.45,0.45}% dark grey
+
+\definecolor{color2}{rgb}{0.545098,0,0}% burgundy
+
+
+\endinput
+%% end of file `moderncvcolorburgundy.sty'.
+\end{filecontents*}
+
+
+% \documentclass[11pt,a4paper,helvetica]{moderncv}
+\documentclass[helvetica]{moderncv}
+% \documentclass{moderncv}
+% moderncv themes
+\moderncvstyle{classic}    % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{burgundy}   % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black' burgundy
+% \usepackage[scale=0.767]{geometry}
+% \usepackage[a4paper, total={7in,9in}]{geometry}
+\usepackage[a4paper, scale=0.85]{geometry}
+\usepackage{fontawesome}
+\usepackage{xpatch}
+\usepackage{enumitem}
+\usepackage[resetlabels]{multibib}
+
+\newlist{deflist}{description}{2}
+\setlist[deflist]{labelwidth=2cm,leftmargin=!,font=\normalfont}
+
+
+% this definition helps with the tabular formatting that you see in the first section of the cv to make it seem more like the classical latex CVs
+% \renewcommand*{\cventry}[7][.9em]{
+%   \begin{tabular*}
+%   {\textwidth}
+% {p{9cm}@{\extracolsep{\fill}}r}%
+%   {\bfseries #4} & {\bfseries #5} \\%
+% %   {\itshape #3\ifthenelse{\equal{#6}{}}{}{, #6}} & {\itshape #2}\\%
+%   \end{tabular*}%
+% %   \ifx&#7&%
+% % \else{\\\vbox{\small#7}}\fi%
+% \par\addvspace{#1}}
+
+\newcommand{\cventrylist}[7][.5em]{
+% \begin{tabular*}
+%   {\textwidth}{p{9cm}@{\extracolsep{\fill}}r}%
+%   {\bfseries #4} & {\bfseries #5} \\%
+%   {\itshape #3\ifthenelse{\equal{#6}{}}{}{, #6}} & {\itshape #2}\\%
+%   \end{tabular*}%
+%   \ifx&#7&%
+% \else{\\\vbox{\small#7}}\fi%
+% \par\addvspace{#1}
+\begin{itemize}
+    \item #2
+\end{itemize}
+}
+
+\newcites{journals,conference,posters,theses,talks}{Journals, Conference Papers, Poster Sessions, Theses, Talks}
+
+\firstname{Derek}
+\familyname{Jones}
+%\title{Curriculum Vitae}                           % optional, remove / comment the line if not wanted
+%\address{street and number}{postcode city}{country}% optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
+% \mobile{+1~(606)~308~2949}                          % optional, remove / comment the line if not wanted
+%\phone{+2~(345)~678~901}                           % optional, remove / comment the line if not wanted
+%\fax{+3~(456)~789~012}                             % optional, remove / comment the line if not wanted
+\email{derekjones2025@gmail.com}                               % optional, remove / comment the line if not wanted
+\homepage{williamdjones.github.io}                         % optional, remove / comment the line if not wanted
+%\extrainfo{additional information}                 % optional, remove / comment the line if not wanted
+%\photo[64pt][0.4pt]{example-image-a}               % optional, remove / comment the line if not wanted
+%\quote{Some quote}                                 % optional, remove / comment the line if not wanted
+\extrainfo{\faGithub williamdjones}
+
+\begin{document}
+
+\makecvtitle
+
+\section{Education}
+\cventry[2em]{Aug. 2020 -- present}{Ph.D}{University of California~-~San Diego}{La Jolla, CA}{}{Major: Computer Science \\ Advisor: Dr. Tajana Rosing}
+%add advisors and expected graduation date for MS
+\cventry[2em]{Aug. 2016 - May. 2018}{M.Sc.}{University of Kentucky}{Lexington, KY}{3.70}{Major: Computer Science \\ Advisors: Dr. Nathan Jacobs \& Dr. Sally R. Ellingson \\}  % arguments 3 to 6 can be left empty
+\cventry[2em]{Aug. 2011 - May. 2016}{B.S.}{University of Kentucky}{Lexington, KY}{3.09}{Major: Computer Science \& Mathematical Economics \\ Advisor: Judy Goldsmith}  % arguments 3 to 6 can be left empty
+
+
+% \section{Research Interests}
+% \cvitem{}{ } 
+
+\section{Experience}
+
+% \cventry{August 2018-Present}{Interdisciplinary Quantitative Biology Program}{Student}{Conducting interdisciplinary research in computer science and biology in collaboration with the BioFrontiers Institute with potential research focus in large scale data analysis and machine learning applications to computational drug discovery}{}{}{}{}
+
+\cventry[2em]{Sept. 2018 - Pres.}{Data Scientist}{ATOM Consortium}{San Francisco, CA}{}{Contributing machine learning and generative modeling expertise on behalf on Lawrence Livermore National Laboratory to develop an open source framework for automated, data-driven, chemical design of disease therapeutics. Specifically developing models and software to enable scalable training and analysis for massive chemical libraries.}{}
+
+
+\cventry[2em]{Sept. 2018 - Pres.}{Research Data Scientist}{Lawrence Livermore National Laboratory}{Livermore, CA}{}{Working as part of an inter-disciplinary team to develop structure based deep learning models to augment physics-based simulation pipelines to drive more effective exploration of protein-ligand binding dynamics.}{}{}
+
+\cventry[2em]{Jun. 2018 - Sept. 2018}{
+Summer Intern}{Lawrence Livermore National Laboratory}
+{Livermore, CA}{}{Developed spatial graph deep learning technique to model protein-ligand interactions, presenting a poster covering a series of transfer learning experiments. Supervised by Dr. Jonathan E. Allen.}{}{}
+
+\cventry[2em]{Jun. 2017 - Aug. 2017}{Summer Intern}{Lawrence Berkeley National Laboratory}{Berkeley, CA}{}{Conducted research with the Computational Chemistry, Materials, and Climate group in the Computational Research Division of LBNL. Applied machine learning and HPC resources to process high dimensional biochemical data for drug discovery and develop a novel random-forest based feature selection algorithm. Supervised by Dr. Bert de Jong.}{}{}
+
+\cventry[2em]{Jan. 2017 - May. 2018}{Grad. Research Assistant}{University of Kentucky - Markey Cancer Center}{Lexington, KY}{}{Worked as part of an interdisciplinary team to study the prediction of potential off-target effects of candidate cancer therapeutics. Developed data processing pipeline and feature selection algorithms to aid in the understanding of important properties of selectivity in the kinase class of proteins.}{}{}
+\cventry[2em]{Aug. 2016 - May. 2017}{Grad. Teaching Assistant}{University of Kentucky - Department of Computer Science}{Lexington, KY}{}{Lab instructor for "Introduction to Programming Design and Abstraction" course, taught in C++. Led 90 minute lab sessions, held office hours to consult with students outside of class, and graded lab assignments, programming assignments, and exams.}{}{}
+% \cventry[2em]{Aug. 2015 - Aug. 2016}{Multimedia Production Consultant}{University of Kentucky - Student Media Depot}{Lexington, KY}{}{Assisted students with the use of Adobe Creative Cloud multimedia production software to support coursework as well as creative projects in film and audio production for music, podcasting, etc.}{}{}
+% \cventry[2em]{Jan. 2013 - Jan. 2014}{Student Worker}{University of Kentucky - William T. Young Library, Audio/Visual Department}{Lexington, KY}{}{Assisted library patrons with access of multimeda resources available to William T. Young Library.}{}{}
+% \cventry[2em]{Jan. 2013 - Jan. 2014}{Judicial Board Member}{University of Kentucky-Inter-fraternity Council (IFC)}{Lexington, KY}{}{Representative of the Phi Kappa Psi Fraternity for the disciplinary body of the campus-wide fraternity governing institution.}
+% \cventry[2em]{Jan. 2012 - Jan. 2013}{Scholarship Chairman}{Phi Kappa Psi Fraternity, University of Kentucky Chapter}{Lexington, KY}{}{Managed scholarship programs of the Phi Kappa Psi fraternity. Consulted with members in order to develop strategic academic performance improvement plans.}
+
+
+\section{Industry Knowledge}
+
+\setlist{nolistsep}
+
+\newcommand*{\cventrylong}[7][.25em]{%
+  \begin{tabular}{@{}p{\hintscolumnwidth}@{\hspace{\separatorcolumnwidth}}p{\maincolumnwidth}@{}}%
+    \raggedright\hintstyle{\bfseries #2} 
+    % &{%
+    %     {#3}%
+    %     \ifthenelse{\equal{#4}{}}{}{, {\slshape#4}}%
+    %     \ifthenelse{\equal{#5}{}}{}{, #5}%
+    %     \ifthenelse{\equal{#6}{}}{}{, #6}%
+    % }%
+  \end{tabular}%
+  {\small#7}%
+  \par\addvspace{#1}}
+  
+  
+\newlist{cvitemize}{itemize}{1}
+\setlist[cvitemize]{label=\labelitemi,
+leftmargin=\hintscolumnwidth+\separatorcolumnwidth+\labelwidth+\labelsep}
+
+
+\cvline{}{  \listitemsymbol Deep Learning
+            \listitemsymbol High-Performance Computing (HPC)
+            \listitemsymbol Statistical Data Analysis 
+            \listitemsymbol Sequence Modeling
+            \listitemsymbol Message Passing Neural Networks (MPNNs)
+            \listitemsymbol Graph Convolution Neural Networks (GCNNs)
+            \listitemsymbol Convolutional Neural Networks (CNNs)
+            \listitemsymbol Mathematics
+            \listitemsymbol Research Projects
+            \listitemsymbol Bioinformatics
+            \listitemsymbol Computational Biology
+            \listitemsymbol Drug Discovery
+            \listitemsymbol Computer Science
+            \listitemsymbol Programming
+            \listitemsymbol Statistical Modeling
+            \listitemsymbol Machine Learning
+            \listitemsymbol Data Analysis
+            \listitemsymbol Statistics
+            \listitemsymbol Data Visualization}
+
+
+
+\section{Tools \& Technologies}
+\cvline{}{\listitemsymbol Python 
+            \listitemsymbol C++
+            \listitemsymbol C
+            \listitemsymbol Matlab
+            \listitemsymbol R
+            \listitemsymbol STATA
+            \listitemsymbol Linux
+            \listitemsymbol PyTorch
+            \listitemsymbol Keras
+            \listitemsymbol Tensorflow 
+            \listitemsymbol Numpy
+            \listitemsymbol Pandas
+            \listitemsymbol Matplotlib
+            \listitemsymbol Scipy
+            \listitemsymbol Git
+            \listitemsymbol LaTeX
+            \listitemsymbol MySQL
+            \listitemsymbol SLURM
+            \listitemsymbol LSF
+            \listitemsymbol POWER architecture
+            \listitemsymbol Microsoft Office 
+            }
+
+
+\section{Soft Skills}
+\cvline{}{\listitemsymbol Inter-personal communication 
+            \listitemsymbol Inter-disciplinary collaboration
+            \listitemsymbol Teamwork
+            \listitemsymbol Leadership
+            \listitemsymbol Public speaking on technical subjects
+            \listitemsymbol Presentation of complex analysis for general audiences}
+
+
+% \section{Projects}
+
+% \cventry{}{Computational Prediction of Adverse Drug Reactions}{Working with Dr. Sally Ellingson to develop a machine learning pipeline to accurately predict drug protein binding affinity in order to develop methods to predict adverse drug reactions}{}{}{}{}{}
+
+% \cventry{}{Advanced Data Science Course Project}{Developed a stochastic, graph cellular automaton in hadoop big data framework to model topic propagation
+% in twitter social networks}{}{}{}
+
+% \cventry{}{Advanced Machine Learning Course Project}{Conducted a survey of current methods in auditory machine learning and implemented a set of classifiers, convolutional neural network, $k$-nearest
+% neighbors and naive bayes, in order to perform a music genre classification task}{}{}{}
+
+% \cventry{}{Computational Social Choice Independent Study}{Conducted an independent study in the field of computational social choice and algorithmic game theory.  Tasks included regular progress meetings, programming assignments related to the topic of interest and a seminar presentation of relevant research}{}{}{}
+
+
+
+
+\section{Publications}
+
+\nocitejournals{*}
+\bibliographystylejournals{hunsrt}
+\bibliographyjournals{journals}
+
+\nociteconference{*}
+\bibliographystyleconference{unsrt}
+\bibliographyconference{conference}
+
+\nociteposters{*}
+\bibliographystyleposters{unsrt}
+\bibliographyposters{posters}
+
+\nocitetalks{*}
+\bibliographystyletalks{unsrt}
+\bibliographytalks{talks}
+
+\nocitetheses{*}
+\bibliographystyletheses{unsrt}
+\bibliographytheses{theses}
+
+
+
+\section{Grants and Awards}
+
+
+\cvitem{2018}{ACM Student Research Competition (SRC) Travel Award}
+\cvitem{2018}{ACM Richard Tapia 2018 Travel Scholarship}
+
+% \cvitem{2018}{UK CS Departmental travel grant, ~ \$600}
+\cvitem{2018}{UK CS Departmental travel grant}
+
+% \cvitem{2017}{Supercomputing (SC) 2017 Student Volunteer Travel Award}
+\cvitem{2017}{Supercomputing (SC) 2017 Student Volunteer Travel Award}
+
+
+% \cvitem{2017}{CRA Computing Sciences Research Pathways Fellowship (LBNL), ~\$7,500}
+\cvitem{2017}{CRA Computing Sciences Research Pathways Fellowship (LBNL)}
+
+% \cvitem{2017}{Lyman T. Johnson Diversity Fellowship, ~\$7,500}
+\cvitem{2017}{Lyman T. Johnson Diversity Fellowship}
+
+% \cvitem{2017}{AAAI 2017 Scholarship, ~ \$350}
+\cvitem{2017}{AAAI 2017 Scholarship}
+
+% \cvitem{2017}{AAAI 2017 Diversity Workshop travel award, ~ \$1,250}
+\cvitem{2017}{AAAI 2017 Diversity Workshop travel award}
+
+% \cvitem{2017}{UK CS Departmental travel grant, ~ \$400}
+\cvitem{2017}{UK CS Departmental travel grant}
+
+\section{Volunteering Experience}
+\cvitem{2017}{Supercomputing (SC) 2017 Student Volunteer}
+\cvitem{2017}{AAAI 2017 Student Volunteer}
+% \cvitem{2011}{William C. Parker Diversity Scholarship}
+% \cvitem{2011}{Kentucky Governor's Scholars Presidential Scholarship}
+
+
+
+\section{Organizations}
+
+% \cventry{2016-present}{Member}{Association for the Advancement of Artificial Intelligence (AAAI)}{}{}{}
+\cvline{2016-present}{Association for Computing Machinery (ACM)}
+% \cvline{2011-2016}{Phi Kappa Psi Fraternity, University of Kentucky Chapter}
+% \cventry{2016-present}{Member}{Institute of  Electical and Electronics Engineers (IEEE)}{}{}{}
+
+\end{document}
